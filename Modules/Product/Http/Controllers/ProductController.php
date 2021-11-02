@@ -42,12 +42,15 @@ class ProductController extends Controller
 
     /**
      * Show the specified resource.
-     * @param int $id
+     * @param Product $product
      * @return Renderable
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        return view('product::show');
+        return response()->json([
+            $product
+        ]);
+
     }
 
     /**

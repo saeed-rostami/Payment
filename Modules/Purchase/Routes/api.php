@@ -14,11 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::middleware('auth:api')->get('/product', function (Request $request) {
-//    return $request->user();
-//});
 
-Route::prefix('product')->group(function() {
-    Route::get('/', 'ProductController@index');
-    Route::get('/{product}', 'ProductController@show');
+Route::group(['middleware' => 'auth:api', 'prefix' => 'purchase'], function () {
+    Route::post('/{product}' , 'PurchaseController@purchase');
 });
+
