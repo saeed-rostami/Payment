@@ -11,6 +11,9 @@
 |
 */
 
-//Route::prefix('purchase')->group(function() {
-//    Route::get('/', 'PurchaseController@index');
-//});
+use Illuminate\Support\Facades\Route;
+
+Route::prefix('purchase')->group(function() {
+    Route::post('/{product}', 'PurchaseController@purchase')->name('purchase');
+});
+Route::get('/callback', 'PurchaseController@callback')->name('callback');

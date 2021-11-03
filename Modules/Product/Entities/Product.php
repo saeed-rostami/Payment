@@ -9,10 +9,11 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
+    protected $guarded = ['id'];
     
     protected static function newFactory()
     {
         return \Modules\Product\Database\factories\ProductFactory::new();
     }
+
 }

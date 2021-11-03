@@ -21,4 +21,13 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('product')->group(function() {
     Route::get('/', 'ProductController@index');
     Route::get('/{product}', 'ProductController@show');
+
+//    ADMIN
+    Route::prefix('admin')->middleware('auth:api')->group(function() {
+        Route::get('/', 'AdminProductController@index');
+        Route::get('/{product}', 'AdminProductController@show');
+        Route::post('/store', 'AdminProductController@store');
+        Route::put('/update/{product}', 'AdminProductController@update');
+        Route::delete('/destroy/{product}', 'AdminProductController@destroy');
+    });
 });

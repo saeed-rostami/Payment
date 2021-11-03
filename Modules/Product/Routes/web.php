@@ -11,3 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
+//Route::prefix('product')->group(function() {
+//    Route::get('/', 'ProductController@index');
+//    Route::get('/{product}', 'ProductController@show');
+//});

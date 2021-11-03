@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::group(['middleware' => 'auth:api', 'prefix' => 'purchase'], function () {
-    Route::post('/{product}' , 'PurchaseController@purchase');
+Route::group(['middleware' => 'auth:api' , 'prefix' => 'purchase'], function () {
+    Route::get('/', 'PurchaseController@index')->name('purchases');
 });
 
