@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::prefix('product')->group(function() {
-    Route::get('/', 'ProductController@index');
+    Route::get('/', 'ProductController@index')->name('products');
     Route::get('/{product}', 'ProductController@show');
 
 //    ADMIN

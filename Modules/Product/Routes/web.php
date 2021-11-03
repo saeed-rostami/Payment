@@ -11,7 +11,7 @@
 |
 */
 
-use Illuminate\Support\Facades\Route;
+//use Illuminate\Support\Facades\Route;
 
 //Route::prefix('product')->group(function() {
 //    Route::get('/', 'ProductController@index');
